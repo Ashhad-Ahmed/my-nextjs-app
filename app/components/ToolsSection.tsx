@@ -6,7 +6,7 @@ export default function ToolsSection() {
     { title: "Custom Business Websites", desc: "Build your website" },
     { title: "Social Media", desc: "Design social content" },
     { title: "Product Design", desc: "Get design help" },
-    { title: "VistaPrint Corporate Services", desc: "Find tailored solutions" },
+    { title: "Elevated Elite Business Branding and Printing", desc: "Find tailored solutions" },
   ];
 
   return (

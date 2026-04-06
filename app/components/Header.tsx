@@ -8,10 +8,10 @@ export default function Header() {
       <div className="h-1 w-full bg-gradient-to-r from-brand-orange via-brand-yellow to-brand-blue"></div>
       {/* Topmost thin bar */}
       <div className="bg-gray-50 text-xs py-2 px-6 flex space-x-6 text-gray-600">
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Websites by Vista x Wix</a>
+        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Websites by Elevated Elite Business Branding and Printing</a>
         <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Corporate Pricing</a>
         <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Reseller Program</a>
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">VistaCreate</a>
+        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Elevated Elite Business Branding and PrintingCreate</a>
       </div>
 
       {/* Main navigation area */}

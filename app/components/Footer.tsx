@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
               <h4 className="font-bold text-lg mb-2">You need it. We print it. You love it.</h4>
               <p className="text-sm text-gray-300">
-                VistaPrint is <a href="#" className="underline">here to help</a> every step of the way.
+                Elevated Elite Business Branding and Printing is <a href="#" className="underline">here to help</a> every step of the way.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
                <a href="#" className="underline hover:text-white transition decoration-gray-400 hover:decoration-white underline-offset-2">Legal Matters</a>
              </div>
              <div>
-               A CIMPRESS company © 2001-2026 VistaPrint. All rights reserved.
+               A CIMPRESS company © 2001-2026 Elevated Elite Business Branding and Printing. All rights reserved.
              </div>
              <div>
                Unless stated otherwise, prices are exclusive of delivery and product options.

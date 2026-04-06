@@ -31,7 +31,7 @@ export default function Newsletter() {
           </form>
 
           <p className="text-xs text-gray-600 max-w-xl">
-            Yes, I'd like to receive special offer emails from VistaPrint, as well as news about products, services and more. I can manage my preferences and unsubscribe at any time.
+            Yes, I'd like to receive special offer emails from Elevated Elite Business Branding and Printing, as well as news about products, services and more. I can manage my preferences and unsubscribe at any time.
           </p>
         </div>
         

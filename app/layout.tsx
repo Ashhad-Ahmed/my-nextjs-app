@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vistaprint Pro",
+  title: "Elevated Elite Business Branding and Printing",
   description: "A modern print and design service.",
 };
 
