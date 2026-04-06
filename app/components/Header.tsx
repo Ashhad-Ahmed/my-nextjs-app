@@ -63,20 +63,20 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Category Links */}
+      {/* Navigation Links */}
       <div className="px-6 py-3 flex items-center justify-between text-[13px] font-medium text-gray-800 leading-tight">
-        <a href="#" className="text-brand-orange font-bold hover:underline">Deals</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Business<br/>Cards</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Postcards & Print<br/>Advertising</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Signs, Banners &<br/>Posters</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Stickers &<br/>Labels</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Clothing &<br/>Bags</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Promotional<br/>Products</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Packaging</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Invitations, Gifts &<br/>Stationery</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Wedding</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Logo, Websites &<br/>Social</a>
-        <a href="#" className="hover:text-brand-blue hover:underline text-center transition-colors">Design<br/>Services</a>
+        <a href="/" className="text-brand-orange font-bold hover:underline">Home</a>
+        <a href="/about" className="hover:text-brand-blue hover:underline text-center transition-colors">About Us</a>
+        <a href="/services" className="hover:text-brand-blue hover:underline text-center transition-colors">Our Services</a>
+        <a href="/custom-printing" className="hover:text-brand-blue hover:underline text-center transition-colors">Custom Printing</a>
+        <a href="/branding" className="hover:text-brand-blue hover:underline text-center transition-colors">Branding Services</a>
+        <a href="/publishing" className="hover:text-brand-blue hover:underline text-center transition-colors">Publishing Services</a>
+        <a href="/apparel" className="hover:text-brand-blue hover:underline text-center transition-colors">Apparel &<br/>Merchandise</a>
+        <a href="/portfolio" className="hover:text-brand-blue hover:underline text-center transition-colors">Portfolio</a>
+        <a href="/quote" className="hover:text-brand-blue hover:underline text-center transition-colors">Request a Quote</a>
+        <a href="/shop" className="hover:text-brand-blue hover:underline text-center transition-colors">Shop</a>
+        <a href="/testimonials" className="hover:text-brand-blue hover:underline text-center transition-colors">Testimonials</a>
+        <a href="/contact" className="hover:text-brand-blue hover:underline text-center transition-colors">Contact Us</a>
       </div>
     </header>
   );
