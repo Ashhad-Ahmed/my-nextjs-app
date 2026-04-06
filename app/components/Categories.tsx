@@ -43,7 +43,7 @@ export default function Categories() {
                 <div className={`w-full aspect-[4/5] rounded-xl mb-3 flex items-center justify-center p-4 transition-transform group-hover:scale-[1.02] ${cat.color} overflow-hidden relative shadow-sm`}>
                   {/* Abstract shapes as placeholders */}
                   <div className="absolute w-24 h-24 bg-black/10 rounded-lg transform rotate-12 group-hover:rotate-6 transition-all duration-300"></div>
-                  <div className="absolute w-20 h-20 bg-blue-900/10 rounded-full blur-xl"></div>
+                  <div className="absolute w-20 h-20 bg-brand-blue/90/10 rounded-full blur-xl"></div>
                 </div>
                 <h3 className="font-bold text-[14px] text-gray-900 leading-tight">{cat.title}</h3>
               </div>

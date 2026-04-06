@@ -1,17 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="w-full font-sans">
       {/* Top Section */}
-      <div className="bg-[#313c4e] text-white pt-16 pb-8 px-6">
+      <div className="bg-slate-900 text-white pt-16 pb-8 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-4">
             {/* Logo Column */}
             <div className="col-span-1">
-              <div className="text-3xl font-bold tracking-tighter flex items-center mb-6">
-                 <span className="text-blue-400 mr-1 text-3xl">▼</span>
-                 vistaprint<span className="text-sm font-normal align-top">®</span>
+              <div className="flex items-center mb-6">
+                 <Image src="/logo.png" alt="VistaPrint Logo" width={150} height={40} className="object-contain" />
               </div>
               <h4 className="font-bold text-lg mb-2">You need it. We print it. You love it.</h4>
               <p className="text-sm text-gray-300">
@@ -133,7 +133,7 @@ export default function Footer() {
       </div>
       
       {/* Floating Chat Button */}
-      <button className="fixed bottom-6 right-6 bg-[#FFB547] text-black font-bold py-2.5 px-5 rounded-full shadow-xl flex items-center gap-2 hover:bg-[#ffaa2b] transition-colors z-50 text-[15px]">
+      <button className="fixed bottom-6 right-6 bg-brand-yellow text-black font-bold py-2.5 px-5 rounded-full shadow-xl flex items-center gap-2 hover:bg-brand-orange transition-colors z-50 text-[15px]">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
         Chat with us
       </button>

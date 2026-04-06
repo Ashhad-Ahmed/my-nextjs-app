@@ -30,7 +30,7 @@ export default function PromoBlocks() {
         <div className="flex-1 relative bg-[#ADD5F5] overflow-hidden flex items-center justify-center group cursor-pointer mt-2 md:mt-0 md:ml-1">
            {/* Abstract Placeholder background */}
            <div className="absolute inset-0 bg-gradient-to-tr from-[#ADD5F5] to-[#D5EBF9] z-0"></div>
-           <div className="absolute right-10 top-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply opacity-20 group-hover:scale-110 transition-transform duration-700"></div>
+           <div className="absolute right-10 top-10 w-72 h-72 bg-brand-blue rounded-full mix-blend-multiply opacity-20 group-hover:scale-110 transition-transform duration-700"></div>
 
           <div className="relative z-10 w-full p-8 md:p-12 flex h-full items-center justify-start md:justify-end">
             <div className="bg-[#F8F7F3] rounded-2xl p-8 max-w-sm shadow-xl mr-auto md:ml-10">

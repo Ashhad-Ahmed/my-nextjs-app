@@ -6,8 +6,8 @@ export default function Newsletter() {
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center relative overflow-hidden px-6">
         
         {/* Decorative graphic (Left side) */}
-        <div className="w-full md:w-1/2 h-64 md:h-auto rounded-tl-3xl rounded-bl-3xl bg-blue-900 absolute left-0 top-0 bottom-0 overflow-hidden hidden md:block">
-           <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-blue-800 rounded-full mix-blend-multiply opacity-50 transform -translate-y-1/2"></div>
+        <div className="w-full md:w-1/2 h-64 md:h-auto rounded-tl-3xl rounded-bl-3xl bg-brand-blue/90 absolute left-0 top-0 bottom-0 overflow-hidden hidden md:block">
+           <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-brand-blue/80 rounded-full mix-blend-multiply opacity-50 transform -translate-y-1/2"></div>
            <div className="absolute text-yellow-400 font-bold text-6xl bottom-10 left-10">LUXA</div>
         </div>
 
