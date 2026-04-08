@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Elevated Elite Business Branding and Printing",
-  description: "A modern print and design service.",
+  title: "EEBBP | Elevated Elite Business Branding & Printing",
+  description: "Elite Branding, Printing, & Custom Solutions in Orlando.",
 };
 
 export default function RootLayout({
@@ -18,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="min-h-full flex flex-col font-sans text-gray-900 bg-white">
+    <html lang="en" className={`${outfit.variable} ${inter.variable} antialiased`}>
+      <body className="min-h-screen bg-premium-black">
         {children}
       </body>
     </html>

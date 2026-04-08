@@ -1,83 +1,106 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { Search, ShoppingCart, ChevronDown, Menu, X } from 'lucide-react';
 
-export default function Header() {
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="w-full bg-white flex flex-col font-sans">
-      {/* Brand accent line */}
-      <div className="h-1 w-full bg-gradient-to-r from-brand-orange via-brand-yellow to-brand-blue"></div>
-      {/* Topmost thin bar */}
-      <div className="bg-gray-50 text-xs py-2 px-6 flex space-x-6 text-gray-600">
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Websites by Elevated Elite Business Branding and Printing</a>
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Corporate Pricing</a>
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Reseller Program</a>
-        <a href="#" className="hover:text-brand-orange hover:underline transition-colors">Elevated Elite Business Branding and PrintingCreate</a>
-      </div>
-
-      {/* Main navigation area */}
-      <div className="px-6 py-4 flex items-center justify-between border-b border-gray-200">
-        <div className="flex items-center gap-2 cursor-pointer">
-          {/* Logo Placeholder */}
-          <div className="flex items-center">
-             <Image src="/logo.png" alt="VistaPrint Logo" width={150} height={40} className="object-contain" />
-          </div>
-        </div>
-
-        {/* Search Bar */}
-        <div className="flex-[0.5] mx-8 relative group">
-          <input 
-            type="text" 
-            placeholder="Search products or services..." 
-            className="w-full bg-gray-50/80 border border-gray-200 rounded-full py-2.5 px-5 pl-5 pr-12 text-[14px] outline-none transition-all duration-300 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15 hover:border-brand-blue/40 shadow-sm hover:shadow-md"
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-premium-black/95 backdrop-blur-md border-b border-gold-500/20 py-2' : 'bg-transparent py-4'}`}>
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/logo.png" 
+            alt="EEBBP Logo" 
+            width={120} 
+            height={50} 
+            className="object-contain"
+            priority
           />
-          <button className="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-gray-400 group-hover:text-brand-orange transition-colors">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center space-x-8">
+          <Link href="/" className="nav-link text-white text-sm font-medium">HOME</Link>
+          <Link href="/about" className="nav-link text-white text-sm font-medium">ABOUT</Link>
+          <div className="relative group">
+            <button className="flex items-center space-x-1 text-white text-sm font-medium group transition-colors hover:text-gold-500">
+              <span>SERVICES</span>
+              <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300 text-gold-500" />
+            </button>
+            <div className="absolute top-full left-0 mt-2 w-48 bg-premium-dark border border-gold-500/20 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl overflow-hidden backdrop-blur-xl">
+              <Link href="/branding" className="block px-4 py-2 text-xs text-gray-300 hover:bg-gold-500 hover:text-premium-black transition-colors">BRANDING & IDENTITY</Link>
+              <Link href="/print" className="block px-4 py-2 text-xs text-gray-300 hover:bg-gold-500 hover:text-premium-black transition-colors">PRINT SOLUTIONS</Link>
+              <Link href="/apparel" className="block px-4 py-2 text-xs text-gray-300 hover:bg-gold-500 hover:text-premium-black transition-colors">CUSTOM APPAREL</Link>
+              <Link href="/publishing" className="block px-4 py-2 text-xs text-gray-300 hover:bg-gold-500 hover:text-premium-black transition-colors">PUBLISHING & DESIGN</Link>
+            </div>
+          </div>
+          <Link href="/portfolio" className="nav-link text-white text-sm font-medium">PORTFOLIO</Link>
+          <Link href="/shop" className="nav-link text-white text-sm font-medium">SHOP</Link>
+          <Link href="/contact" className="nav-link text-white text-sm font-medium">CONTACT</Link>
+          <Link href="/blog" className="nav-link text-white text-sm font-medium">BLOG</Link>
+        </nav>
+
+        {/* Actions */}
+        <div className="flex items-center space-x-6">
+          <button className="text-gold-500 hover:text-white transition-colors">
+            <Search size={20} />
+          </button>
+          <div className="relative">
+            <button className="text-gold-500 hover:text-white transition-colors">
+              <ShoppingCart size={20} />
+            </button>
+            <span className="absolute -top-2 -right-2 bg-gold-500 text-premium-black text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+          </div>
+          <Link 
+            href="/quote" 
+            className="hidden sm:block px-6 py-2.5 bg-gold-500 text-premium-black text-xs font-bold rounded hover:bg-white hover:shadow-[0_0_20px_rgba(230,184,0,0.5)] transition-all duration-300 uppercase tracking-wider"
+          >
+            Request a Quote
+          </Link>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden text-gold-500"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Right Actions */}
-        <div className="flex items-center gap-8 text-[14px] font-medium text-gray-800">
-          <div className="relative flex items-center">
-            <span className="flex items-center gap-1.5 cursor-pointer hover:text-brand-blue transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-              Help is here
-            </span>
-            <span className="absolute top-full left-[26px] text-[11px] text-gray-500 font-normal leading-none mt-0.5">1.866.207.4955</span>
-          </div>
-          <a href="#" className="flex items-center gap-1.5 hover:text-brand-blue transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-            My projects
-          </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-brand-orange transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            My Favorites
-          </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-brand-blue transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            My Account
-          </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-brand-orange transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            Cart
-          </a>
-        </div>
       </div>
 
-      {/* Navigation Links */}
-      <div className="px-6 py-3 flex items-center justify-between text-[13px] font-medium text-gray-800 leading-tight">
-        <a href="/" className="text-brand-orange font-bold hover:underline">Home</a>
-        <a href="/about" className="hover:text-brand-blue hover:underline text-center transition-colors">About Us</a>
-        <a href="/services" className="hover:text-brand-blue hover:underline text-center transition-colors">Our Services</a>
-        <a href="/custom-printing" className="hover:text-brand-blue hover:underline text-center transition-colors">Custom Printing</a>
-        <a href="/branding" className="hover:text-brand-blue hover:underline text-center transition-colors">Branding Services</a>
-        <a href="/publishing" className="hover:text-brand-blue hover:underline text-center transition-colors">Publishing Services</a>
-        <a href="/apparel" className="hover:text-brand-blue hover:underline text-center transition-colors">Apparel &<br/>Merchandise</a>
-        <a href="/portfolio" className="hover:text-brand-blue hover:underline text-center transition-colors">Portfolio</a>
-        <a href="/quote" className="hover:text-brand-blue hover:underline text-center transition-colors">Request a Quote</a>
-        <a href="/shop" className="hover:text-brand-blue hover:underline text-center transition-colors">Shop</a>
-        <a href="/testimonials" className="hover:text-brand-blue hover:underline text-center transition-colors">Testimonials</a>
-        <a href="/contact" className="hover:text-brand-blue hover:underline text-center transition-colors">Contact Us</a>
+      {/* Mobile Menu */}
+      <div className={`lg:hidden fixed inset-0 top-[72px] bg-premium-black/95 backdrop-blur-xl transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col items-center justify-center h-full space-y-8 p-10">
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl text-white hover:text-gold-500 transition-colors">HOME</Link>
+          <Link href="/about" onClick={() => setIsMenuOpen(false)} className="text-2xl text-white hover:text-gold-500 transition-colors">ABOUT</Link>
+          <Link href="/services" onClick={() => setIsMenuOpen(false)} className="text-2xl text-white hover:text-gold-500 transition-colors">SERVICES</Link>
+          <Link href="/portfolio" onClick={() => setIsMenuOpen(false)} className="text-2xl text-white hover:text-gold-500 transition-colors">PORTFOLIO</Link>
+          <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="text-2xl text-white hover:text-gold-500 transition-colors">CONTACT</Link>
+          <Link 
+            href="/quote" 
+            onClick={() => setIsMenuOpen(false)}
+            className="px-8 py-3 bg-gold-500 text-premium-black font-bold rounded-lg"
+          >
+            REQUEST A QUOTE
+          </Link>
+        </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

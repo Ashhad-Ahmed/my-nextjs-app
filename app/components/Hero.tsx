@@ -1,54 +1,71 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section className="w-full flex flex-col font-sans">
-      {/* Top Banner - Subtle gradient instead of flat black */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-xs py-2.5 px-4 flex justify-between items-center shadow-md">
-        <button className="text-gray-300 hover:text-white transition-colors">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div className="font-medium tracking-wide text-center flex-1">
-          $50 off orders $150+, $25 off orders $100+, $15 off orders $75+ | Code: <span className="font-bold text-brand-yellow">BMSM</span> | Ends April 7 | <a href="#" className="underline font-bold text-brand-blue hover:text-white transition-colors">Shop now</a>
-        </div>
-        <button className="text-gray-300 hover:text-white transition-colors">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-premium-black">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/hero_team.png" 
+          alt="Luxury Office" 
+          fill 
+          className="object-cover opacity-40 scale-105"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-premium-black via-premium-black/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-transparent to-premium-black/50"></div>
       </div>
 
-      {/* Main Hero Area - Modern smooth gradient */}
-      <div className="relative w-full h-[550px] bg-gradient-to-br from-slate-900 via-brand-blue/20 to-slate-900 flex items-center justify-center overflow-hidden">
-        {/* Subtle decorative glow instead of cluttered text */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-blue/15 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-orange/8 rounded-full blur-[80px] pointer-events-none"></div>
+      {/* Golden Geometric Shapes (Design Accents) */}
+      <div className="absolute top-20 right-[-10%] w-[600px] h-1 bg-gold-500/20 rotate-[35deg] blur-sm"></div>
+      <div className="absolute top-40 right-[-5%] w-[600px] h-1 bg-gold-500/30 rotate-[35deg] blur-md"></div>
+      <div className="absolute bottom-40 left-[-10%] w-[600px] h-1 bg-gold-500/20 scale-x-[-1] rotate-[35deg] blur-sm"></div>
 
-        {/* Center Content Box - Modern Glassmorphic style */}
-        <div className="relative bg-white/95 backdrop-blur-md rounded-2xl p-10 max-w-2xl w-full mx-4 text-center shadow-2xl border border-white/20 z-10 transform transition-all duration-500 hover:shadow-cyan-900/20">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue mb-3">Buy More, Save More</p>
-          <h2 className="text-5xl font-extrabold tracking-tight text-gray-900 mb-4">$50 off orders $150+</h2>
-          <p className="text-gray-600 font-medium text-lg mb-6">$25 off orders $100+ <span className="mx-2 text-gray-300">|</span> $15 off orders $75+</p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl animate-fade-in-up">
+          <div className="inline-block py-1 pr-10 border-r-4 border-gold-500 mb-6 px-4 bg-white/5 backdrop-blur-sm">
+            <span className="text-white text-sm font-bold tracking-[0.3em] uppercase">Elite Solutions in Orlando</span>
+          </div>
+
+          <h3 className="text-white lg:text-3xl text-xl font-bold mb-2 tracking-tight">
+            WE DON'T JUST DESIGN....
+          </h3>
+          <h1 className="text-white lg:text-7xl md:text-5xl text-4xl font-extrabold mb-8 leading-tight">
+            WE <span className="text-gold">DOMINATE</span> BRANDING.
+          </h1>
           
-          <div className="bg-gray-50/80 inline-block px-6 py-2 rounded-full border border-gray-100 mb-8">
-            <p className="text-gray-800 font-medium text-sm">
-              Code: <strong className="font-bold text-black border-b-2 border-brand-orange">BMSM</strong> <span className="text-gray-300 mx-2">|</span> Ends April 7
-            </p>
-          </div>
+          <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
+            Elevate your business with Elite Branding, Printing, & Custom Solutions in Orlando. 
+            We turn your vision into high-impact visual reality.
+          </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <button className="bg-gray-900 text-white px-8 py-3.5 rounded-xl font-semibold transform transition-all hover:bg-brand-orange hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-orange/25 active:translate-y-0">
-              Business Cards
-            </button>
-            <button className="bg-gray-900 text-white px-8 py-3.5 rounded-xl font-semibold transform transition-all hover:bg-brand-orange hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-orange/25 active:translate-y-0">
-              Clothing & Bags
-            </button>
-            <button className="bg-gray-900 text-white px-8 py-3.5 rounded-xl font-semibold transform transition-all hover:bg-brand-orange hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-orange/25 active:translate-y-0">
-              Promotional products
-            </button>
+          <div className="flex flex-wrap gap-6">
+            <Link 
+              href="/start" 
+              className="px-10 py-4 bg-gold-500 text-premium-black font-bold rounded shadow-[0_0_30px_rgba(230,184,0,0.3)] hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest text-sm"
+            >
+              Start Your Brand
+            </Link>
+            <Link 
+              href="/portfolio" 
+              className="group flex items-center space-x-4 px-10 py-4 border border-white/20 text-white font-bold rounded hover:bg-white hover:text-premium-black transition-all duration-300 uppercase tracking-widest text-sm"
+            >
+              <span>View Portfolio</span>
+              <div className="w-6 h-px bg-white group-hover:bg-premium-black transition-colors"></div>
+            </Link>
           </div>
-
-          <p className="text-[11px] text-gray-400">Not combinable with other offers.</p>
         </div>
+      </div>
+      
+      {/* Bottom Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-[10px] text-gold-500 font-bold tracking-widest mb-2 uppercase">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-gold-500 to-transparent"></div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

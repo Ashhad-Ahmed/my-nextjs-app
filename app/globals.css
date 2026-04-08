@@ -1,29 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-gold-50: #fff9e6;
+  --color-gold-100: #ffefcc;
+  --color-gold-200: #ffd899;
+  --color-gold-300: #ffc266;
+  --color-gold-400: #ffab33;
+  --color-gold-500: #e6b800; /* Primary Gold */
+  --color-gold-600: #cc9900;
+  --color-gold-700: #997300;
+  --color-gold-800: #664d00;
+  --color-gold-900: #332600;
+
+  --color-premium-black: #0a0a0a;
+  --color-premium-dark: #1a1a1a;
+  --color-premium-gray: #333333;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-brand-orange: #fb4c02;
-  --color-brand-blue: #25c7fb;
-  --color-brand-yellow: #fb8706;
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --gold: #e6b800;
+  --gold-dark: #b8860b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #e6b800 0%, #b8860b 100%);
+}
+
+.text-gold {
+  color: #e6b800;
+  background: linear-gradient(to right, #e6b800, #ffeb99, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-glass {
+  background: rgba(230, 184, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 184, 0, 0.2);
+}
+
+.nav-link {
+  @apply relative py-2 transition-colors hover:text-gold-500;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.premium-card {
+  @apply bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.dark .premium-card {
+  @apply bg-premium-dark border-premium-gray;
 }

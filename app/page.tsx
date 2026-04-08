@@ -1,27 +1,23 @@
+'use client';
+
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import Categories from './components/Categories';
-import Collections from './components/Collections';
-import PromoBlocks from './components/PromoBlocks';
-import NewArrivals from './components/NewArrivals';
-import ToolsSection from './components/ToolsSection';
-import Newsletter from './components/Newsletter';
+import CoreServices from './components/CoreServices';
+import Community from './components/Community';
+import Portfolio from './components/Portfolio';
+import LatestBlog from './components/LatestBlog';
 import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <main className="min-h-screen bg-premium-black selection:bg-gold-500 selection:text-premium-black">
       <Header />
       <Hero />
-      <Features />
-      <Categories />
-      <Collections />
-      <PromoBlocks />
-      <NewArrivals />
-      <ToolsSection />
-      <Newsletter />
+      <CoreServices />
+      <Community />
+      <Portfolio />
+      <LatestBlog />
       <Footer />
-    </div>
+    </main>
   );
 }
