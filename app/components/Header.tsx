@@ -23,10 +23,10 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image 
-            src="/logoo.jpg" 
+            src="/logoo.png" 
             alt="EEBBP Logo" 
-            width={120} 
-            height={50} 
+            width={160} 
+            height={80} 
             className="object-contain"
             priority
           />

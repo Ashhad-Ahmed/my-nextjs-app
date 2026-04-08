@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Logo and Contact */}
           <div className="space-y-8">
-            <Image src="/logoo.jpg" alt="EEBBP" width={180} height={80} className="object-contain" />
+            <Image src="/logoo.png" alt="EEBBP" width={180} height={80} className="object-contain" />
             <div className="space-y-4">
               <a href="tel:4078836545" className="flex items-center space-x-4 text-gray-400 hover:text-gold-500 transition-colors group">
                 <Phone size={18} className="text-gold-500" />
